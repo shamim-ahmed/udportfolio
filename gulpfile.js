@@ -2,12 +2,12 @@ var gulp = require('gulp');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
-var imageResize = require('gulp-image-resize');
+var imagemin = require('gulp-imagemin');
 var merge = require('merge-stream');
 
 var buildFolder = './build';
 
-gulp.task('default', ['minify-css', 'minify-js', 'minify-html', 'resize-image']);
+gulp.task('default', ['minify-css', 'minify-js', 'minify-html', 'optimize-image']);
 
 gulp.task('minify-css', function() {
   var css_set_1 = gulp.src('./css/*.css').pipe(cleanCss()).pipe(gulp.dest(buildFolder + '/css'));
@@ -30,8 +30,8 @@ gulp.task('minify-html', function() {
   return merge(html_set_1, html_set_2);
 });
 
-gulp.task('resize-image', function() {
-  var img_set_1 = gulp.src('./img/**/*.{jpg,png}').pipe(imageResize({width: 100}).pipe(gulp.dest(buildFolder + '/img')));
-  var img_set_2 = gulp.src('./views/images/*.{jpg,png}').pipe(imageResize({width: 100}).pipe(gulp.dest(buildFolder + '/views/images')));
+gulp.task('optimize-image', function() {
+  var img_set_1 = gulp.src('./img/**/*.{jpg,png}').pipe(imagemin()).pipe(gulp.dest(buildFolder + '/img'));
+  var img_set_2 = gulp.src('./views/images/*.{jpg,png}').pipe(imagemin()).pipe(gulp.dest(buildFolder + '/views/images'));
   return merge(img_set_1, img_set_2);
 });
