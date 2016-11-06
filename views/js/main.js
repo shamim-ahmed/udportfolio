@@ -502,8 +502,9 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
+  // use getElementByClassName() for better performance
   var items = document.getElementsByClassName('mover');
-  // Fix 1 : eliminate redundant computation
+  // eliminate redundant computation of the same value within the loop
   var c = document.body.scrollTop / 1250;
   for (var i = 0, j = 0; i < items.length; i++, j++) {
     if (j >= 5) {
@@ -531,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
-  // fix 2 : reduce the number of pizzas that are animated
+  // reduce the number of pizzas that are animated
   var h = window.innerHeight;
   var r = Math.ceil(h/s);
   var numberOfMovingPizzas = r * cols;
