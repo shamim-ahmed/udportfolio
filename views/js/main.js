@@ -502,11 +502,14 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
   // Fix 1 : eliminate redundant computation
   var c = document.body.scrollTop / 1250;
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(c + (i % 5));
+  for (var i = 0, j = 0; i < items.length; i++, j++) {
+    if (j >= 5) {
+      j = 0;
+    }
+    var phase = Math.sin(c + j);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
