@@ -535,6 +535,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // reduce the number of pizzas that are animated
   var h = window.innerHeight;
   var r = Math.ceil(h/s);
+
+  // ensure that at least 3 rows of pizzas are animated
+  if (r < 3) {
+    r = 3;
+  }
+
   var numberOfMovingPizzas = r * cols;
 
   for (var i = 0; i < numberOfMovingPizzas; i++) {
