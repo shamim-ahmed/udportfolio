@@ -517,8 +517,14 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
   // eliminate redundant computation of the same value within the loop
   var c = document.body.scrollTop / 1250;
+  var phases = [];
+
+  for (var k = 0; k < 5; k++) {
+      phases.push(Math.sin(c + k));
+  }
+
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(c + (i % 5));
+    var phase = phases[i % 5];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
