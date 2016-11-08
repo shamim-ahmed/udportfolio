@@ -449,12 +449,13 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    // used getElementsByClassName for better performance
+    // optimization 1: use getElementsByClassName for better performance
     var selectedItems = document.getElementsByClassName("randomPizzaContainer");
     var dx = 0;
     var newwidth = 0;
 
     if (selectedItems.length > 0) {
+      // optimization 2: eliminate layout thrashing.
       // All pizzas will have same width at any givent point in time.
       // So, it is sufficient to read the old width of one of the pizzas to
       // calculate the new width. We can apply this new width to all pizzas
@@ -513,9 +514,9 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  // use getElementByClassName() for better performance
+  // optimization 3: use getElementsByClassName() for better performance
   var items = document.getElementsByClassName('mover');
-  // eliminate redundant computation of the same value within the loop
+  // optimization 4: eliminate redundant computation of the same set of values within the loop
   var c = document.body.scrollTop / 1250;
   var phases = [];
 
@@ -546,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
-  // reduce the number of pizzas that are animated
+  // optimiztion 5: reduce the number of pizzas that are animated
   var h = window.innerHeight;
   var r = Math.ceil(h/s);
 
