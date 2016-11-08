@@ -457,9 +457,8 @@ var resizePizzas = function(size) {
     if (selectedItems.length > 0) {
       // optimization 2: eliminate layout thrashing.
       // All pizzas will have same width at any givent point in time.
-      // So, it is sufficient to read the old width of one of the pizzas to
-      // calculate the new width. We can apply this new width to all pizzas
-      // on the page.
+      // So, we can read the old width of only one of the pizzas to calculate the new width.
+      // Then we can apply this new width to all pizzas.
       dx = determineDx(selectedItems[0], size);
       newwidth = (selectedItems[0].offsetWidth + dx) + 'px';
     }
