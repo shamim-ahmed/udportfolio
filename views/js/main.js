@@ -513,9 +513,9 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  // optimization 3: use getElementsByClassName() for better performance
+  // optimization 1: use getElementsByClassName() for better performance
   var items = document.getElementsByClassName('mover');
-  // optimization 4: eliminate redundant computation of the same set of values within the loop
+  // optimization 3: eliminate redundant computation of the same set of values within the loop
   var c = document.body.scrollTop / 1250;
   var phases = [];
 
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
-  // optimiztion 5: reduce the number of pizzas that are animated
+  // optimiztion 4: reduce the number of pizzas that are animated
   var h = window.innerHeight;
   var r = Math.ceil(h/s);
 
