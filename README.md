@@ -16,6 +16,7 @@
 #### Optimization 1: Use getElementsByClassName() instead of querySelectorAll() for better performance
 The original code used querySelectorAll() in several places. They have been replaced with getElementsByClassName(), which is supposed
 to be more efficient.
+
 Reference: http://ryanmorr.com/abstract-away-the-performance-faults-of-queryselectorall/
 
 #### Optimization 2: Eliminate layout thrashing
@@ -76,7 +77,7 @@ for (var i = 0; i < items.length; i++) {
 ```
 
 #### Optimization 4: Reduce the number of animated pizzas
-The original JavaScript code created and animated 200 pizzas. However, only a handful of these pizzas were actually visible on screen. This represented a significant performance bottleneck. We have avoided the problem if we determine the number of animated pizzas from window height.
+The original JavaScript code created and animated 200 pizzas. However, only a handful of these pizzas were actually visible on screen. This represented a significant performance bottleneck. We have avoided this problem by determining the number of animated pizzas from window height.
 
 #### Optimization 5: Special CSS poperty value for improved performance
 It has been suggested that following CSS rule improves animation performance:
