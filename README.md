@@ -32,7 +32,7 @@ for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i
 
 This code had several issues. Firstly, it was invoking the querySelectorAll() method repeatedly, which can be avoided. Secondly, it was
 causing layout thrashing by reading and updating style values repeatedly within the loop. This problem can be avoided if we calculate
-dx and newwidth values outside of the loop (reading phase), and use these values inside the loop to update style (writing phase). Here is
+dx and newwidth values before the loop (reading phase), and use these values inside the loop to update style (writing phase). Here is
 the updated code:
 
 ```javascript
