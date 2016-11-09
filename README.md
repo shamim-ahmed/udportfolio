@@ -17,7 +17,7 @@
 The original code used querySelectorAll() in several places. They have been replaced with getElementsByClassName(), which is supposed
 to be more efficient.
 
-Reference: http://ryanmorr.com/abstract-away-the-performance-faults-of-queryselectorall/
+Reference: https://www.nczonline.net/blog/2010/09/28/why-is-getelementsbytagname-faster-that-queryselectorall/
 
 #### Optimization 2: Eliminate layout thrashing
 The original code in main.js had the following snippet:
