@@ -1,6 +1,45 @@
 ## Website Performance Optimization portfolio project
 
 ### Getting started
+#### Build Instructions
+- Clone the repository using the following command:
+
+```
+git clone https://github.com/shamim-ahmed/udportfolio.git
+```
+
+- Go to the 'udportfolio' folder
+
+- Run the following command in oder to install all required dependencies:
+
+```
+npm install --save-dev
+```
+
+- Run the following command to build the project:
+
+```
+gulp default
+```
+
+This will run the gulp task named 'default', which will minify HTML, CSS, JavaScript and optimize images and place them under 'build'
+folder.
+
+- Now go to the 'build' folder and run the following command:
+
+python -m SimpleHTTPServer 8080
+
+The website will be available at http://localhost:8080
+
+- Optionally, you can install ngrok and run the following command to make the site available at a public URL:
+
+```
+ngrok http 8080
+```
+
+#### Live demo
+
+Please go to https://shamim-ahmed.github.io for a live demo.
 
 ### Optimizations in index.html
 
