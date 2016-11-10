@@ -34,7 +34,6 @@ form {
   width: 256px;
   z-index: -1;
   transform: translate3d(0, 0, 0);  // optimization 5
-  backface-visibility: hidden;
 }
 
 .randomPizzaContainer {
