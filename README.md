@@ -50,6 +50,7 @@ Please go to https://shamim-ahmed.github.io for a live demo.
 - All references to JavaScript files have been moved to the bottom of the page
 - The async attribute has been added to the appropriate script tags
 - HTML, CSS and JavaScript files have been minified
+- Usage of Google font has been removed
 - Images have been optimized
 
 ### Optimization in views/js/main.js (for pizza.html)
