@@ -22,10 +22,10 @@ npm install --save-dev
 gulp default
 ```
 
-This will run the gulp task named 'default', which will minify HTML, CSS, JavaScript and optimize images and place them under 'build'
+This will run the gulp task named 'default', which will minify HTML, CSS, JavaScript and optimize images and place them under 'dist'
 folder.
 
-- Now go to the 'build' folder and run the following command:
+- Now go to the 'dist' folder and run the following command:
 
 ```
 python -m SimpleHTTPServer 8080
