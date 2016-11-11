@@ -5,7 +5,7 @@ var minifyHtml = require('gulp-minify-html');
 var imagemin = require('gulp-imagemin');
 var merge = require('merge-stream');
 
-var buildFolder = './build';
+var buildFolder = './dist';
 
 gulp.task('default', ['minify-css', 'minify-js', 'minify-html', 'optimize-image']);
 
