@@ -27,9 +27,9 @@ folder.
 
 - Now go to the 'build' folder and run the following command:
 
-'''
+```
 python -m SimpleHTTPServer 8080
-'''
+```
 
 The website will be available at http://localhost:8080
 
